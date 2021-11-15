@@ -1,16 +1,22 @@
 function mergeArrays(a, b) {
-  // your code here
-  var returnArray = [];
-  var counter = 0;
-  while (a[counter] || b[counter] ){
-    if(a[counter]){
-      returnArray.push(a[counter]);
+  let c = [];
+  let i = 0;
+  while ( i < a.length && i < b.length) {
+    c.push( a[ i ] )
+    c.push( b[ i ] )
+    i++
+  }
+  if ( b.length > a.length ) {
+    while ( i < b.length) {
+      c.push( b[ i ] )
+      i++
     }
-    if(b[counter]){
-      returnArray.push(b[counter]);
+  }
+  if ( a.length > b.length) {
+    while ( i < a.length) {
+      c.push( a[ i ] )
+      i++
     }
-    counter++;
-    
-   }
-   return returnArray;
+  }
+  return c
 }
